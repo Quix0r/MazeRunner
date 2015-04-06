@@ -1,0 +1,23 @@
+{
+    "name": "markbaker/mazerunner",
+    "type": "library",
+    "description": "Maze game",
+    "keywords": ["maze ansi"],
+    "homepage": "https://github.com/MarkBaker/MazeRunner",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Mark Baker",
+            "email": "mark@lange.demon.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Complex\\": "classes/src/"
+        },
+    },
+    "minimum-stability": "dev"
+}
