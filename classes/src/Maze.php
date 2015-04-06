@@ -122,4 +122,25 @@ class Maze
         $this->start->setY($this->height - $this->start->getY() + 1);
         $this->end->setY($this->height - $this->end->getY() + 1);
     }
+
+    public function transposePosition(position $position)
+    {
+        list($x, $y) = [$position->getY(), $position->getX()];
+        $position->setX($x);
+        $position->setY($y);
+    }
+
+    public function transpose()
+    {
+        $this->map = call_user_func_array(
+            'array_map',
+            array_merge(
+                array(null),
+                $this->map
+            )
+        );
+        list($this->width, $this->height) = [$this->height, $this->width];
+        $this->transposePosition($this->start);
+        $this->transposePosition($this->end);
+    }
 }

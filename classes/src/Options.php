@@ -6,7 +6,7 @@ class Options
 {
     protected static $keyOptions = ['up:', 'down:', 'left:', 'right:', 'quit:'];
 
-    protected static $mazeOptions = ['reverse', 'flip:'];
+    protected static $mazeOptions = ['reverse', 'flip:', 'transpose'];
     
     protected static $mazeFlipOptions = ['Horizontal', 'Vertical'];
 
@@ -27,6 +27,9 @@ class Options
             switch($key) {
                 case 'flip' :
                     $this->flipMaze($maze, $values);
+                    break;
+                case 'transpose' :
+                    $maze->transpose();
                     break;
                 case 'reverse' :
                     $maze->reverse();

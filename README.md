@@ -64,17 +64,19 @@ The maze itself can be altered with some additional command-line options
 php MazeRunner.php --reverse --flip=horizontal,vertical
 ```
 
- - --reverse will swap the start and end points for the maze
- - --flip will flip the maze along horizontally and/or vertically. Valid options are
-   - horizontal
-   - vertical
+ - `--reverse` will swap the start and end points for the maze
+ - `--flip` will flip the maze along horizontally and/or vertically. Valid options are
+   - `horizontal`
+   - `vertical`
 
    You can flip both horizontally and vertically at the same time by passing both values separated with a comma (as shown above)
+ - `--transpose` will transpose the maze, effectively flip it along the diagonal
 
 ---
 
 ##To Do
 
- - Additional option to vary the maze by rotating it
+
+ - Move counter
  - More mazes
  - Special effects when you step into a wall
