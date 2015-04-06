@@ -13,11 +13,13 @@ class MazeRunner
     {
         $this->console = new Console();
         $this->config = new Config($config);
+        (new Options)->keyOptions($this->config);
     }
 
     public function setMaze($mapFile)
     {
         $this->maze = new maze($this->console, $this->config, $mapFile);
+        (new Options)->mazeOptions($this->maze);
         $this->position = $this->maze->render();
         $this->displayPosition();
     }

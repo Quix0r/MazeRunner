@@ -44,12 +44,37 @@ Valid colour names are:
 
 ---
 
+##Command-line Options
+
+You can override some of the configuration settings from the command-line by passing additional arguments
+
+###Overriding Control Keys
+
+Any of the `--up`, `--down`, `--left`, `--right` and `--quit` arguments can be used to override the appropriate keys
+
+```
+php MazeRunner.php --up=2 --down=8 --left=4 --right=6 --quit=x
+```
+
+###Modifying the Maze
+
+The maze itself can be altered with some additional command-line options
+
+```
+php MazeRunner.php --reverse --flip=horizontal,vertical
+```
+
+ - --reverse will swap the start and end points for the maze
+ - --flip will flip the maze along horizontally and/or vertically. Valid options are
+   - horizontal
+   - vertical
+
+   You can flip both horizontally and vertically at the same time by passing both values separated with a comma (as shown above)
+
+---
+
 ##To Do
 
- - Command line options allowing the player to override the configuration file keys
- - Options to vary the maze by
-   - reversing the start/end points
-   - Flip the maze horizontally or vertically
-   - Rotate the maze
+ - Additional option to vary the maze by rotating it
  - More mazes
  - Special effects when you step into a wall
