@@ -3,8 +3,8 @@
  * $Id: bootstrap.php 2892 2011-08-14 15:11:50Z markbaker@phpexcel.net $
  *
  * @copyright   Copyright (C) 2012 Mark Baker. All rights reserved.
- * @package     Complex
- * @subpackage  Complex Unit Tests
+ * @package     MazeRunner
+ * @subpackage  MazeRunner Unit Tests
  * @author      Mark Baker
  */
 
@@ -33,7 +33,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
  * @todo Sort out xdebug in vagrant so that this works in all sandboxes
  * For now, it is safer to test for it rather then remove it.
  */
-echo "Complex tests beginning\n";
+echo "MazeRunner tests beginning\n";
 
 if(extension_loaded('xdebug')) {
     echo "Xdebug extension loaded and running\n";
@@ -44,5 +44,3 @@ if(extension_loaded('xdebug')) {
 
 
 require_once(APPLICATION_PATH . '/Bootstrap.php');
-// Unset non-serializable resources used in the Complex bootstrap for loading function files
-unset($file, $iterator);
