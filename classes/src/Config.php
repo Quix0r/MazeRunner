@@ -4,24 +4,58 @@ namespace MazeRunner;
 
 class Config
 {
+    /**
+     * @var StdClass
+     *
+     * Properties are:
+     *   - up
+     *   - down
+     *   - left
+     *   - right
+     *   - quit
+     */
     public $keys;
+
+    /**
+     * @var StdClass
+     *
+     * Properties are:
+     *   - maze
+     *   - exit
+     *   - runner
+     */
     public $colours;
+
+    /**
+     * @var StdClass
+     *
+     * Properties are:
+     *   - exit
+     *   - runner
+     */
     public $characters;
 
-    public function __construct($config)
+    /**
+     * @param string $configFile Name/Path of the configuration file
+     * @throws \Exception
+     */
+    public function __construct($configFile)
     {
-        $this->initialise($config);
+        $this->initialise($configFile);
     }
 
-    public function initialise($config)
+    /**
+     * @param $configFile Name/Path of the configuration file
+     * @throws \Exception
+     */
+    public function initialise($configFile)
     {
-        if (!file_exists($config) || !is_readable($config)) {
+        if (!file_exists($configFile) || !is_readable($configFile)) {
             throw new \Exception('Unable to read configuration file');
         }
-        $configuration = parse_ini_file($config, true);
+        $configuration = parse_ini_file($configFile, true);
         foreach ($configuration as $key => $value) {
-            $value = (object) $value;
-            $this->$key = $value;
+            $this->$key = (object) $value;
         }
     }
 }

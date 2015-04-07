@@ -9,10 +9,10 @@ class MazeRunner
     protected $maze;
     protected $position;
 
-    public function __construct($config)
+    public function __construct($configFile)
     {
         $this->console = new Console();
-        $this->config = new Config($config);
+        $this->config = new Config($configFile);
         (new Options)->keyOptions($this->config);
     }
 

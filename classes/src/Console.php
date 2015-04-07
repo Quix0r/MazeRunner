@@ -49,11 +49,17 @@ class Console
         'background' => 40,
     ];
 
+    /**
+     * Clear the screen, and set cursor position to top left
+     */
     public function clearScreen()
     {
         echo self::CSI . '2J';
     }
 
+    /**
+     * Clear from the current cursor position to the end of line
+     */
     public function clearLine()
     {
         echo self::CSI . '2K';

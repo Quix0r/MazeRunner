@@ -33,7 +33,7 @@ class MapReader
         return str_getcsv($data[2]);
     }
 
-    protected function initialiseMap($map)
+    protected function initialiseMap(array $map)
     {
         $this->calculateWidth($map);
         $this->calculateHeight($map);
@@ -45,12 +45,12 @@ class MapReader
         }
     }
 
-    protected function calculateWidth($map)
+    protected function calculateWidth(array $map)
     {
         $this->width = strlen(decbin(max($map)));
     }
 
-    protected function calculateHeight($map)
+    protected function calculateHeight(array $map)
     {
         $this->height = count($map);
     }
