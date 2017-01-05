@@ -1,6 +1,8 @@
 MazeRunner.phar
 unitTests/codeCoverage
 analysis
+vendor
+composer.lock
 
 ## IDE support
 *.buildpath
